@@ -1,0 +1,690 @@
+[
+    {
+        "id": "98f6ca31da8c9f17",
+        "type": "tab",
+        "label": "MoodLamp Flow MQTT Test",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2dc49ccfabeb426f",
+        "type": "group",
+        "z": "98f6ca31da8c9f17",
+        "name": "Neopixel kruh",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "169f420a26f029bf",
+            "b380e73d5b3c9dd3",
+            "9bf1a143916c9943",
+            "e066699f95de7be7",
+            "7c868b08cf03f76e",
+            "8aa1192614118cc6",
+            "2373a9a50d378a1e",
+            "fb828d7bde1bfdd8",
+            "2e58c3f7a089a509",
+            "257c60751c9030aa",
+            "9211da33c8337879"
+        ],
+        "x": 174,
+        "y": 459,
+        "w": 852,
+        "h": 322
+    },
+    {
+        "id": "81ffcfdfec3bea1f",
+        "type": "group",
+        "z": "98f6ca31da8c9f17",
+        "name": "",
+        "style": {
+            "label": true,
+            "stroke": "none"
+        },
+        "nodes": [
+            "73df96ba1e8c673d",
+            "35d8a150444835fa"
+        ],
+        "x": 508,
+        "y": 33,
+        "w": 644,
+        "h": 394
+    },
+    {
+        "id": "73df96ba1e8c673d",
+        "type": "group",
+        "z": "98f6ca31da8c9f17",
+        "g": "81ffcfdfec3bea1f",
+        "name": "Vlhkost",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "228d0ec4d801d2b4",
+            "eca031531b91f625",
+            "8d1429a4ee465715",
+            "a1661f37780c4e7a"
+        ],
+        "x": 534,
+        "y": 239,
+        "w": 412,
+        "h": 162
+    },
+    {
+        "id": "35d8a150444835fa",
+        "type": "group",
+        "z": "98f6ca31da8c9f17",
+        "g": "81ffcfdfec3bea1f",
+        "name": "Teplota",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "d4d01da38fa141c1",
+            "ef4aad6cb8ee7816",
+            "3011a165be5310f9",
+            "cf1aa0de48c1b28f",
+            "b52d861060d4fac2"
+        ],
+        "x": 534,
+        "y": 59,
+        "w": 592,
+        "h": 162
+    },
+    {
+        "id": "5e9647d077208785",
+        "type": "mqtt in",
+        "z": "98f6ca31da8c9f17",
+        "name": "",
+        "topic": "MoodLamp",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "cd64f4fe7d88fdfe",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "228d0ec4d801d2b4",
+                "d4d01da38fa141c1",
+                "3011a165be5310f9"
+            ]
+        ]
+    },
+    {
+        "id": "169f420a26f029bf",
+        "type": "ui_colour_picker",
+        "z": "98f6ca31da8c9f17",
+        "g": "2dc49ccfabeb426f",
+        "name": "",
+        "label": "RGB Picker",
+        "group": "239272a50f163659",
+        "format": "rgb",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": true,
+        "showValue": true,
+        "showHue": false,
+        "showAlpha": false,
+        "showLightness": true,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 2,
+        "width": "8",
+        "height": "5",
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 270,
+        "y": 620,
+        "wires": [
+            [
+                "8aa1192614118cc6",
+                "257c60751c9030aa",
+                "2e58c3f7a089a509",
+                "9211da33c8337879"
+            ]
+        ]
+    },
+    {
+        "id": "b380e73d5b3c9dd3",
+        "type": "mqtt out",
+        "z": "98f6ca31da8c9f17",
+        "g": "2dc49ccfabeb426f",
+        "name": "",
+        "topic": "Lamp/Red",
+        "qos": "",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cd64f4fe7d88fdfe",
+        "x": 850,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "9bf1a143916c9943",
+        "type": "ui_dropdown",
+        "z": "98f6ca31da8c9f17",
+        "g": "2dc49ccfabeb426f",
+        "name": "",
+        "label": "NeoPixel Mode",
+        "tooltip": "",
+        "place": "Vyberte možnost",
+        "group": "239272a50f163659",
+        "order": 1,
+        "width": "8",
+        "height": "1",
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Rainbow",
+                "value": 0,
+                "type": "num"
+            },
+            {
+                "label": "Konkrétní barva",
+                "value": 1,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 280,
+        "y": 500,
+        "wires": [
+            [
+                "e066699f95de7be7",
+                "7c868b08cf03f76e"
+            ]
+        ]
+    },
+    {
+        "id": "e066699f95de7be7",
+        "type": "mqtt out",
+        "z": "98f6ca31da8c9f17",
+        "g": "2dc49ccfabeb426f",
+        "name": "",
+        "topic": "MoodLamp/LampMode",
+        "qos": "0",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cd64f4fe7d88fdfe",
+        "x": 710,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "7c868b08cf03f76e",
+        "type": "debug",
+        "z": "98f6ca31da8c9f17",
+        "g": "2dc49ccfabeb426f",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "8aa1192614118cc6",
+        "type": "function",
+        "z": "98f6ca31da8c9f17",
+        "g": "2dc49ccfabeb426f",
+        "name": "function 20",
+        "func": "let rgbString = msg.payload;\n\n// Extracting the numeric values from the string\nlet numericValues = rgbString.match(/\\d+/g).map(Number);\n\n// Store the numeric values as separate variables\nlet r = numericValues[0];\n\n// Create a new message object to send the values separately\nmsg.payload = r;\n\n// Publish each value to separate MQTT topics\n    node.send({topic: \"skupina/4is2/Kuba/MoodLamp_MQTTTest/Lamp/Red\", payload: r});",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 620,
+        "wires": [
+            [
+                "b380e73d5b3c9dd3"
+            ]
+        ]
+    },
+    {
+        "id": "2373a9a50d378a1e",
+        "type": "mqtt out",
+        "z": "98f6ca31da8c9f17",
+        "g": "2dc49ccfabeb426f",
+        "name": "",
+        "topic": "MoodLamp/Lamp/Green",
+        "qos": "",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cd64f4fe7d88fdfe",
+        "x": 890,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "fb828d7bde1bfdd8",
+        "type": "mqtt out",
+        "z": "98f6ca31da8c9f17",
+        "g": "2dc49ccfabeb426f",
+        "name": "",
+        "topic": "MoodLamp/Lamp/Blue",
+        "qos": "",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cd64f4fe7d88fdfe",
+        "x": 880,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "2e58c3f7a089a509",
+        "type": "function",
+        "z": "98f6ca31da8c9f17",
+        "g": "2dc49ccfabeb426f",
+        "name": "function 21",
+        "func": "let rgbString = msg.payload;\n\n// Extracting the numeric values from the string\nlet numericValues = rgbString.match(/\\d+/g).map(Number);\n\n// Store the numeric values as separate variables\nlet r = numericValues[1];\n\n// Create a new message object to send the values separately\nmsg.payload = r;\n\n// Publish each value to separate MQTT topics\n    node.send({topic: \"skupina/4is2/Kuba/MoodLamp_MQTTTest/Lamp/Green\", payload: r});",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 660,
+        "wires": [
+            [
+                "2373a9a50d378a1e"
+            ]
+        ]
+    },
+    {
+        "id": "257c60751c9030aa",
+        "type": "function",
+        "z": "98f6ca31da8c9f17",
+        "g": "2dc49ccfabeb426f",
+        "name": "function 22",
+        "func": "let rgbString = msg.payload;\n\n// Extracting the numeric values from the string\nlet numericValues = rgbString.match(/\\d+/g).map(Number);\n\n// Store the numeric values as separate variables\nlet r = numericValues[2];\n\n// Create a new message object to send the values separately\nmsg.payload = r;\n\n// Publish each value to separate MQTT topics\n    node.send({topic: \"skupina/4is2/Kuba/MoodLamp_MQTTTest/Lamp/Blue\", payload: r});",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 700,
+        "wires": [
+            [
+                "fb828d7bde1bfdd8"
+            ]
+        ]
+    },
+    {
+        "id": "9211da33c8337879",
+        "type": "debug",
+        "z": "98f6ca31da8c9f17",
+        "g": "2dc49ccfabeb426f",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "228d0ec4d801d2b4",
+        "type": "change",
+        "z": "98f6ca31da8c9f17",
+        "g": "73df96ba1e8c673d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.vlhkost.hodnota",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 320,
+        "wires": [
+            [
+                "eca031531b91f625",
+                "8d1429a4ee465715",
+                "a1661f37780c4e7a"
+            ]
+        ]
+    },
+    {
+        "id": "eca031531b91f625",
+        "type": "debug",
+        "z": "98f6ca31da8c9f17",
+        "g": "73df96ba1e8c673d",
+        "name": "debug 23",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "8d1429a4ee465715",
+        "type": "ui_text",
+        "z": "98f6ca31da8c9f17",
+        "g": "73df96ba1e8c673d",
+        "group": "2baa26257526e71a",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Aktuální vlhkost:",
+        "format": "{{msg.payload}}%",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 840,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "a1661f37780c4e7a",
+        "type": "ui_chart",
+        "z": "98f6ca31da8c9f17",
+        "g": "73df96ba1e8c673d",
+        "name": "",
+        "group": "2baa26257526e71a",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "label": "Vlhkost [%]",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 830,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d4d01da38fa141c1",
+        "type": "change",
+        "z": "98f6ca31da8c9f17",
+        "g": "35d8a150444835fa",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.teplota.hodnota",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 140,
+        "wires": [
+            [
+                "3011a165be5310f9"
+            ]
+        ]
+    },
+    {
+        "id": "ef4aad6cb8ee7816",
+        "type": "debug",
+        "z": "98f6ca31da8c9f17",
+        "g": "35d8a150444835fa",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "3011a165be5310f9",
+        "type": "function",
+        "z": "98f6ca31da8c9f17",
+        "g": "35d8a150444835fa",
+        "name": "function 19",
+        "func": "// Teplota zaokrouhlená na 2 desetinná místa\nmsg.payload = Math.round(msg.payload * 100) / 100;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 140,
+        "wires": [
+            [
+                "ef4aad6cb8ee7816",
+                "cf1aa0de48c1b28f",
+                "b52d861060d4fac2"
+            ]
+        ]
+    },
+    {
+        "id": "cf1aa0de48c1b28f",
+        "type": "ui_text",
+        "z": "98f6ca31da8c9f17",
+        "g": "35d8a150444835fa",
+        "group": "0d56c5e12c1bacfc",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Aktuální teplota:",
+        "format": "{{msg.payload}} °C",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1020,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "b52d861060d4fac2",
+        "type": "ui_chart",
+        "z": "98f6ca31da8c9f17",
+        "g": "35d8a150444835fa",
+        "name": "",
+        "group": "0d56c5e12c1bacfc",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "label": "Teplota [°C]",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "60",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1010,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cd64f4fe7d88fdfe",
+        "type": "mqtt-broker",
+        "name": "ppppp",
+        "broker": "test.mosquitto.org",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "239272a50f163659",
+        "type": "ui_group",
+        "name": "Mood Lamp (NeoPixel)",
+        "tab": "68feb34413f94804",
+        "order": 3,
+        "disp": true,
+        "width": "8",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "2baa26257526e71a",
+        "type": "ui_group",
+        "name": "Vlhkost z DHT11",
+        "tab": "68feb34413f94804",
+        "order": 6,
+        "disp": true,
+        "width": "8",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "0d56c5e12c1bacfc",
+        "type": "ui_group",
+        "name": "Teplota z DHT11",
+        "tab": "68feb34413f94804",
+        "order": 5,
+        "disp": true,
+        "width": "8",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "68feb34413f94804",
+        "type": "ui_tab",
+        "name": "IoT Projekt - Mood Lamp",
+        "icon": "fa-microchip",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
