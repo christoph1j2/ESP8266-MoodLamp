@@ -157,7 +157,7 @@
         "z": "98f6ca31da8c9f17",
         "g": "2dc49ccfabeb426f",
         "name": "",
-        "topic": "Lamp/Red",
+        "topic": "MoodLamp/Lamp/Red",
         "qos": "",
         "retain": "true",
         "respTopic": "",
@@ -166,7 +166,7 @@
         "correl": "",
         "expiry": "",
         "broker": "cd64f4fe7d88fdfe",
-        "x": 850,
+        "x": 880,
         "y": 620,
         "wires": []
     },
