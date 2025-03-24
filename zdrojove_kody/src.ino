@@ -23,8 +23,9 @@ struct WifiNetwork {
 
 // Zadej sem seznam WiFi sítí, ke kterým se kód pokusí připojit
 WifiNetwork wifiNetworks[] = {
+  {"IoT-3301", "mikrobus"}
   {"doma", "etchristoph1022"},
-  {"IoT-3301", "mikrobus"}  // Nahraď dle potřeby
+  {"Lukyno_", "MatyVihrava"}
 };
 
 const int wifiNetworkCount = sizeof(wifiNetworks) / sizeof(wifiNetworks[0]);
