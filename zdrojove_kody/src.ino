@@ -23,7 +23,7 @@ struct WifiNetwork {
 
 // Zadej sem seznam WiFi sítí, ke kterým se kód pokusí připojit
 WifiNetwork wifiNetworks[] = {
-  {"IoT-3301", "mikrobus"}
+  {"IoT-3301", "mikrobus"},
   {"Lukyno_", "MatyVihrava"}
 };
 
